@@ -18,6 +18,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import CastConnectedIcon from '@mui/icons-material/CastConnected';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle'
+import AutofpsSelectIcon from '@mui/icons-material/AutofpsSelect';
+import BarChartIcon from '@mui/icons-material/BarChart';
 import {
   Outlet,
   Link
@@ -173,6 +175,50 @@ export default function Main() {
                   <SupervisedUserCircleIcon />
                 </ListItemIcon>
                 <ListItemText primary={'Users'} sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ display: 'block' }}>
+            <Link to='/condition'>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <AutofpsSelectIcon />
+                </ListItemIcon>
+                <ListItemText primary={'Condition'} sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ display: 'block' }}>
+            <Link to='/statistics'>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <BarChartIcon />
+                </ListItemIcon>
+                <ListItemText primary={'Statistics'} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </Link>
           </ListItem>

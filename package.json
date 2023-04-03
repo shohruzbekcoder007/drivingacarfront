@@ -23,11 +23,14 @@
     "react-swipeable-views": "^0.14.0",
     "redux": "^4.2.1",
     "styled-components": "^5.3.6",
+    "victory": "^36.6.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

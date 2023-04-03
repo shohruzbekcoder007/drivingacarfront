@@ -1,27 +1,26 @@
-import * as React from "react"
+import React from 'react'
 import TabsUnstyled from "@mui/base/TabsUnstyled"
 import TabPanelUnstyled from "@mui/base/TabPanelUnstyled"
 import { Tab, TabsList } from "./styles"
 import Container from '@mui/material/Container'
-import Ordinary from "./Ordinary"
-import TowTruck from "./TowTruck"
+import Intoxication from './Intoxication'
+import CarInTowTruck from './CarInTowTruck'
 
-export default function PublicLoginTabs() {
+export default function Condition() {
     return (
         <Container>
             <TabsUnstyled defaultValue={0}>
                 <TabsList>
-                    <Tab>Ordinary users</Tab>
-                    <Tab>Tow truck</Tab>
+                    <Tab>State of intoxication</Tab>
+                    <Tab>Car is a tow truck</Tab>
                 </TabsList>
                 <TabPanelUnstyled value={0}>
-                    <Ordinary/>
+                    <Intoxication/>
                 </TabPanelUnstyled>
                 <TabPanelUnstyled value={1}>
-                    <TowTruck/>
+                    <CarInTowTruck/>
                 </TabPanelUnstyled>
             </TabsUnstyled>
         </Container>
-
-    );
+    )
 }
