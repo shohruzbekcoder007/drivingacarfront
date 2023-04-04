@@ -1,10 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Pagination, Paper, Skeleton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
 import { PaginationWrapper } from './styles'
 
 export default function Intoxication() {
 
     const [drunkUser, setDrunkUser] = useState([])
+    const [totalPages, setTotalPages] = useState(1)
+    const [page, setPage] = useState(1)
+
+    const handleChange = (_, p) => {
+        setPage(p);
+      }
+
+      useEffect(() => {
+        // setDrunkUser
+        // setTotalPages
+      }, [page]);
+    
 
     return (
         <>
@@ -49,13 +61,11 @@ export default function Intoxication() {
             </TableContainer>
             <PaginationWrapper>
                 <Pagination
-                    // count={totalPages}
-                    count={1}
+                    count={totalPages}
                     variant="outlined"
                     color="primary"
                     shape="rounded"
-                    // onChange={handleChange}
-                    onChange={()=> {}}
+                    onChange={handleChange}
                 />
             </PaginationWrapper>
         </>

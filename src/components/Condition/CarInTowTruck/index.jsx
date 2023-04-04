@@ -1,10 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Pagination, Paper, Skeleton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
 import { PaginationWrapper } from './styles'
 
 export default function CarInTowTruck() {
 
-    const [drunkUser, setDrunkUser] = useState([])
+    const [truckUser, setTruckUser] = useState([])
+    const [totalPages, setTotalPages] = useState(1)
+    const [page, setPage] = useState(1)
+
+    const handleChange = (_, p) => {
+        setPage(p);
+      }
+
+      useEffect(() => {
+        // setTruckUser
+        // setTotalPages
+      }, [page]);
 
     return (
         <>
@@ -21,7 +32,7 @@ export default function CarInTowTruck() {
                     </TableHead>
                     <TableBody>
                         {
-                            (drunkUser.length === 0) ?
+                            (truckUser.length === 0) ?
                                 <>
                                     <TableRow>
                                         <TableCell component="th" scope="row"><Skeleton animation="wave" /></TableCell>
@@ -32,7 +43,7 @@ export default function CarInTowTruck() {
                                         <TableCell component="th" align="right"><Skeleton animation="wave" /></TableCell>
                                     </TableRow>
                                 </> :
-                                drunkUser.map((row) => (
+                                truckUser.map((row) => (
                                     <TableRow
                                         key={row._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -49,13 +60,11 @@ export default function CarInTowTruck() {
             </TableContainer>
             <PaginationWrapper>
                 <Pagination
-                    // count={totalPages}
-                    count={1}
+                    count={totalPages}
                     variant="outlined"
                     color="primary"
                     shape="rounded"
-                    // onChange={handleChange}
-                    onChange={()=> {}}
+                    onChange={handleChange}
                 />
             </PaginationWrapper>
         </>
