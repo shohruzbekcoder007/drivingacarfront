@@ -7,6 +7,7 @@ import Device from "./components/Device";
 import Users from "./components/Users";
 import ChartUsers from "./components/ChartUsers";
 import Condition from "./components/Condition";
+import Statistics from "./components/Statistics";
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
             <Route index element={<Device/>}/>
             <Route path="users" element={<Users/>}/>
             <Route path="condition" element={<Condition/>}/>
-            <Route path="statistics" element={<h1>statistics</h1>}/>
+            <Route path="statistics" element={<Statistics/>}/>
           </Route>
         )}
         <Route path="login" element={<Login/>}/>
