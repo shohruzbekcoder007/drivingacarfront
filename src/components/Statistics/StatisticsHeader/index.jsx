@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { users_count, done_conditions } from '../../../utils/API_urls'
+import { users_count, done_conditions, driver_count } from '../../../utils/API_urls'
 import axios from '../../../utils/baseUrl';
+import { Container } from '@mui/material';
 
 export default function StatisticsHeader() {
 
@@ -13,6 +14,7 @@ export default function StatisticsHeader() {
     })
 
     const [conditions, setConditions] = useState(0)
+    const [driverCount, setDriverCount] = useState(0)
 
     useEffect(() => {
         axios
@@ -50,9 +52,28 @@ export default function StatisticsHeader() {
                 console.log({ errorMessage: error.toString() });
                 console.error("There was an error!", error);
             });
+
+        axios
+            .get(driver_count, {
+                headers: {
+                    "x-auth-token": sessionStorage.getItem("x-auth-token"),
+                },
+            })
+            .then((response) => {
+                sessionStorage.setItem(
+                    "x-auth-token",
+                    response.headers["x-auth-token"]
+                );
+                setDriverCount(response.data.count)
+            })
+            .catch((error) => {
+                console.log({ errorMessage: error.toString() });
+                console.error("There was an error!", error);
+            });
     },[])
 
     return (
+        <Container>
         <Box sx={{ flexGrow: 1, p: 2 }}>
             <Grid container spacing={2}>
                 <Grid item xs={6} md={3}>
@@ -66,7 +87,7 @@ export default function StatisticsHeader() {
                     <div className="card" style={{transform: 'rotate(-1.34824deg)'}}>
                         <img src="https://cdn.windowsreport.com/wp-content/uploads/2020/05/Arduino-Port-1.jpg"/>
                         <p>Device</p>
-                        <h2>00</h2>
+                        <h2>{driverCount}</h2>
                     </div>
                 </Grid>
                 <Grid item xs={6} md={3}>
@@ -85,5 +106,6 @@ export default function StatisticsHeader() {
                 </Grid>
             </Grid>
         </Box>
+        </Container>
     );
 }

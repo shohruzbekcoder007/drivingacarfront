@@ -106,7 +106,7 @@ export default function Device() {
       <Typography variant="h6" gutterBottom align='center' sx={{mb: 2}}>
         Devices available in the system
       </Typography>
-      <Paper elevation={2} sx={{ margin: "15px 0", p: 2 }}>
+      <Paper elevation={4} sx={{ margin: "15px 0", p: 2 }}>
         <Grid container spacing={2}>
           <Grid item xs={6}>
             <Typography variant="h6" gutterBottom >
@@ -149,7 +149,7 @@ export default function Device() {
           </Grid>
         </Grid>
       </Paper>
-      <TableContainer component={Paper}>
+      <TableContainer elevation={4} component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>

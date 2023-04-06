@@ -41,7 +41,7 @@ export default function Intoxication() {
             <Typography variant="h6" gutterBottom align='center' sx={{ mt: 1, mb: 2 }}>
                 Drunk users
             </Typography>
-            <TableContainer component={Paper}>
+            <TableContainer elevation={4} component={Paper}>
                 <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                     <TableHead>
                         <TableRow>

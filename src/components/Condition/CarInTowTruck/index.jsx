@@ -26,7 +26,6 @@ export default function CarInTowTruck() {
                     "x-auth-token",
                     response.headers["x-auth-token"]
                 );
-                console.log(response.data.conditions)
                 setTruckUser(response.data.conditions);
                 setTotalPages(response.data.totalPages);
             })
@@ -42,7 +41,7 @@ export default function CarInTowTruck() {
                 Car is a tow truck
             </Typography>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+                <Table elevation={4} sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                     <TableHead>
                         <TableRow>
                             <TableCell><h3>Tow truck driver</h3></TableCell>

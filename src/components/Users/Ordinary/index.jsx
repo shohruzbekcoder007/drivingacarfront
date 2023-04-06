@@ -79,7 +79,7 @@ export default function Ordinary() {
             <Typography variant="h6" gutterBottom align='center' sx={{mt: 1, mb: 2}}>
                 Users available in the system
             </Typography>
-            <Paper elevation={2} sx={{ margin: "15px 0", p: 2 }}>
+            <Paper elevation={4} sx={{ margin: "15px 0", p: 2 }}>
                 <Box
                     component="div"
                     sx={{
@@ -97,7 +97,7 @@ export default function Ordinary() {
                     <Button variant="contained" sx={{marginTop: 2}} onClick={searchDevice}>Search</Button>
                 </Box>
             </Paper>
-            <TableContainer component={Paper}>
+            <TableContainer elevation={4} component={Paper}>
                 <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                     <TableHead>
                         <TableRow>
