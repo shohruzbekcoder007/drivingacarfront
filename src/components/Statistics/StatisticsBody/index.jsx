@@ -4,6 +4,7 @@ import { Button, Container, Paper, Typography } from '@mui/material'
 // import CustomizedMenus from './CustomizedMenus'
 import { result_time } from '../../../utils/API_urls'
 import axios from '../../../utils/baseUrl';
+import InformationCard from './InformationCard';
 
 export default function StatisticsBody() {
 
@@ -46,9 +47,9 @@ export default function StatisticsBody() {
           {/* <CustomizedMenus getStatus={setStatus}/> */}
           <Button variant="contained" onClick={resultHendler}>Result</Button>
         </div>
-        <Paper elevation={4} sx={{my: 3, p: 2}}>
-          salom hammaga
-        </Paper>
+        {
+          result?<Paper elevation={4} sx={{my: 3, p: 2}}><InformationCard startDate={startDate} endDate={endDate} result={result}/></Paper>:<></>
+        }
       </Container>
 
     </>

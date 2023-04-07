@@ -76,7 +76,7 @@ export default function CarInTowTruck() {
                                             {row.truck.tel_number}
                                         </TableCell>
                                         <TableCell component="th" scope="row">
-                                            {new Date(row.created_at).toISOString()}
+                                            {new Date(row.created_at).toLocaleString()}
                                         </TableCell>
                                         <TableCell component="th" scope="row">
                                             <span style={{color: "green"}}>Received the car</span>

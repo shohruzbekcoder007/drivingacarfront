@@ -35,7 +35,6 @@ export default function Intoxication() {
             });
     }, [page]);
 
-
     return (
         <>
             <Typography variant="h6" gutterBottom align='center' sx={{ mt: 1, mb: 2 }}>
@@ -77,7 +76,7 @@ export default function Intoxication() {
                                             {row.user.tel_number}
                                         </TableCell>
                                         <TableCell component="th" scope="row">
-                                            {new Date(row.created_at).toISOString()}
+                                            {new Date(row.created_at).toLocaleString()}
                                         </TableCell>
                                         <TableCell component="th" scope="row">
                                             <span style={{color: "red"}}>Intoxication has been detected</span>
