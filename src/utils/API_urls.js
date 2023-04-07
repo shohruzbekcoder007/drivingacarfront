@@ -1,5 +1,5 @@
 // host
-export const host = "https://driver.onrender.com/v1"
+export const host = "https://driver.onrender.com"
 
 // user
 export const user = `/user`
